@@ -1,3 +1,5 @@
+#nullable enable
+
 namespace SpaceTravel.Models;
 
 public class ErrorViewModel

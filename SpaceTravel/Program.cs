@@ -2,6 +2,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SpaceTravel.Data;
 using SpaceTravel.Models;
+<<<<<<< HEAD
+=======
+using RestSharp;
+//using SpaceTravel.Keys;
+>>>>>>> main
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +16,23 @@ builder.Services.AddControllersWithViews();
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+<<<<<<< HEAD
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+=======
+// builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//     options.UseSqlite(connectionString));
+// builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDbContext<SpaceTravelContext>(
+                  dbContextOptions => dbContextOptions
+                    .UseMySql(
+                      builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
+                    )
+                  )
+                );
+>>>>>>> main
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();

@@ -17,7 +17,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
+<<<<<<< HEAD
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
+=======
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
+    <PackageReference Include="RestSharp" Version="108.0.3" />
+>>>>>>> main
   </ItemGroup>
 
 </Project>
