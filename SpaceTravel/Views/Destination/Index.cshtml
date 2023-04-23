@@ -1,5 +1,25 @@
 @{
-    ViewData["Title"] = "Destinations";
+    ViewData["Title"] = "Destination";
 }
 
-//destination name, picture url, price
+@using SpaceTravel.Models;
+
+<h1>Hot flights</h1>
+<!-- //foreach loop for destination card -->
+
+<div class="container" id="cardDisplay">
+    @foreach (Destination destination in Model)
+    {
+    <div class="card" style="width: 18rem;"> 
+        <figure>
+            <img src=@($"{destination.Url}") class="card-img-top" alt="...">
+        </figure>
+        <div class="card-body">
+            <h5 class="card-title">@Html.ActionLink($"{destination.Name}", "Details", new { id = destination.DestinationId}) </h5>
+            <p class="card-text">@($"{destination.Price}")</p>
+            <a href="#" class="btn btn-primary">BOOK FLIGHT</a>
+        </div>
+    </div>
+
+    }
+</div>
