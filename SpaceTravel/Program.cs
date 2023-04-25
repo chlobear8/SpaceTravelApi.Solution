@@ -1,3 +1,4 @@
+
 using Microsoft.EntityFrameworkCore;
 using SpaceTravel.Models;
 using RestSharp;
@@ -10,17 +11,6 @@ builder.Services.AddControllersWithViews();
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-=======
-// builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//     options.UseSqlite(connectionString));
-// builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-=======
->>>>>>> 2e57103c4df0cebd67ab7d75940cd3f8a680d7d6
 
 builder.Services.AddDbContext<SpaceTravelContext>(
                   dbContextOptions => dbContextOptions
@@ -29,7 +19,6 @@ builder.Services.AddDbContext<SpaceTravelContext>(
                     )
                   )
                 );
->>>>>>> main
 
 
 builder.Services.AddControllersWithViews();
