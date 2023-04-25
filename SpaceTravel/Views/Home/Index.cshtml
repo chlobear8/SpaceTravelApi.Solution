@@ -3,11 +3,35 @@
 }
 
 @using SpaceTravel.Models
+@using Display_Image_Database_MVC.Models
+@model IEnumerable<Display_Image_Database_MVC.Models.ImageModel>
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Leeloo's MutliPass Space Travel Agency!</h1>
     <p>Grab your MultiPass and jet off to your next vacation destination!</p>
 </div>
 
-<img src = '@Url.Action( "show", "image", new { id = ViewData["imageId"] })' />
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <span>Select Image:</span>
+        <select name="ImageId" onchange="document.forms[0].submit();">
+            <option value="0">Please select</option>
+            @foreach (ImageModel image in Model)
+            {
+                if (image.IsSelected)
+                {
+                    <option value="@image.Id" selected="selected">@image.Name</option>
+                }
+                else
+                {
+                    <option value="@image.Id">@image.Name</option>
+                }
+            }
+        </select>
+    }
+    @if (ViewBag.Base64String != null)
+    {
+        <hr/>
+        <img alt="" src="@ViewBag.Base64String" style="height:100px;width:100px;"/>
+    }
 
