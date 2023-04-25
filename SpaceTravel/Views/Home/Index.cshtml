@@ -2,7 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
+@using SpaceTravel.Models
+
 <div class="text-center">
     <h1 class="display-4">Welcome to Leeloo's MutliPass Space Travel Agency!</h1>
     <p>Grab your MultiPass and jet off to your next vacation destination!</p>
 </div>
+
+<div class="container" id="cardDisplay">
+    @foreach (Destination destination in Model)
+    {
+    <div class="card" style="width: 18rem;"> 
+        <figure>
+            <img src=@($"{destination.Url}") class="card-img-top" alt="...">
+        </figure>
+        <div class="card-body">
+            <h5 class="card-title">@Html.ActionLink($"{destination.Name}", "Details", new { id = destination.DestinationId}) </h5>
+            <p class="card-text">@($"{destination.Price}")</p>
+            <a href="#" class="btn btn-primary">BOOK FLIGHT</a>
+        </div>
+    </div>
+
+    }
+</div>
+
