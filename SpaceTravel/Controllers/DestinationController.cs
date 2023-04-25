@@ -20,5 +20,24 @@ namespace SpaceTravel.Controllers
             List<Destination> model = _db.Destination.ToList();
             return View(model);
         }
+
+                // GET: Destination/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var destination = await _db.Destination
+                .FirstOrDefaultAsync(m => m.DestinationId == id);
+            if (destination == null)
+            {
+                return NotFound();
+            }
+
+            return View(destination);
+        }
+
     }
 }
