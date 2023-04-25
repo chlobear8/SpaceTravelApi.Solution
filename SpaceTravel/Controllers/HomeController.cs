@@ -4,6 +4,9 @@ using SpaceTravel.Models;
 using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Linq;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace SpaceTravel.Controllers;
 
@@ -23,10 +26,10 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public ActionResult Index(int imageId)
+    public IActionResult Index(int imageId)
     {
         List<ImageModel> images = GetImages();
-        ImageModel image = images.Find(p => p.Id == imageId);
+        ImageModel image = images.FirstOrDefault(p => p.Id == imageId);
         if (image != null)
         {
             image.IsSelected = true;
