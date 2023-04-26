@@ -1,9 +1,9 @@
 Richelle -- 
-Chloe - I haven't pushed yet, there's two errors in chloe2 branch. I was working on creating a dropdown menu that allows users to select an image from a database. Thought it would be cool on the splash page.
-Mike - 
-  - Added a Destination details view, it is super basic. 
-  - Also added a details route to the Destination controller
-Najma - Header styling for destinations page.
+Chloe - BUGFIX/ last nights work broke. Added AI generated images and working on getting them in a column style on the left side. Sizing needs to be done.
+Mike - WIP destinations detail view, shows images. Looked into identity/scaffolding for future BUGFIX
+Najma - WIP hovering over image for book now/rather than a button
+
+Note to Richelle-- nothing new is pushed since we are all still working on some bugs. Mostly all CSS based stuff so nothing to crazy going on <3
 
 # Notes/ ToDo:
 
