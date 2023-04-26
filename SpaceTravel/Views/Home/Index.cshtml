@@ -10,27 +10,75 @@
     <p>Grab your MultiPass and jet off to your next vacation destination!</p>
 </div>
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Post))
-    {
-        <span>Select Image:</span>
-        <select name="ImageId" onchange="document.forms[0].submit();">
-            <option value="0">Please select</option>
-            @foreach (ImageModel image in Model)
-            {
-                if (image.IsSelected)
-                {
-                    <option value="@image.Id" selected="selected">@image.Name</option>
-                }
-                else
-                {
-                    <option value="@image.Id">@image.Name</option>
-                }
-            }
-        </select>
-    }
-    @if (ViewBag.Base64String != null)
-    {
-        <hr/>
-        <img alt="" src="@ViewBag.Base64String" style="height:100px;width:100px;"/>
-    }
-
+<section class="homepage--hero--features z-20 -mx-5 flex flex-g row flex-col justify-end bg-gray-50 py-10 md:mx-1
+    md:py-0 lg:mx-0 lg:bg-transparent xl:bg-gray-50">
+<h2 class="heading-tinier mx-5 flex-none border-b border-gray-300 pb-2 md:hidden">Destinations from Leeloo</h2>
+<div class="flex flex-col gap-6 divide-y divide-gray-300  px-5 md:px-0">
+    <div class="flex grow items-center justify-center pt-6">
+        <div class="w-full">
+            <article class="card-dest-comp "></article>
+                <div class="image-wrap">
+                    <picture>
+                        <img src="~/assets/images/Neptune.png">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <header class="header">
+            <h3 class="destination-eyebrow">Neptune</h3>
+        </header>
+        <footer class="footer">
+            <div class="statistic-box">
+                <span class="statistic-title">Stories</span>
+                <span class="statistic-number">3</span>
+            </div>
+        </footer>
+    </div>
+    <div class="flex grow items-center justify-center pt-6">
+        <div class="w-full">
+            <article class="card-dest-comp "></article>
+                <div class="image-wrap">
+                    <picture>
+                        <img src="~/assets/images/Uranus.png">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <header class="header">
+            <h3 class="destination-eyebrow">Uranus</h3>
+        </header>
+        <footer class="footer">
+            <div class="statistic-box">
+                <span class="statistic-title">Stories</span>
+                <span class="statistic-number">5</span>
+            </div>
+        </footer>
+    </div>
+    <div class="flex grow items-center justify-center pt-6">
+        <div class="w-full">
+            <article class="card-dest-comp "></article>
+                <div class="image-wrap">
+                    <picture>
+                        <img src="~/assets/images/Jupiter.png">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <header class="header">
+            <h3 class="destination-eyebrow">Jupiter</h3>
+        </header>
+        <footer class="footer">
+            <div class="statistic-box">
+                <span class="statistic-title">Stories</span>
+                <span class="statistic-number">9</span>
+            </div>
+        </footer>
+    </div>
+</div>
+</section>
