@@ -1,7 +1,8 @@
 Richelle -- 
-Chloe - BUGFIX/ last nights work broke. Added AI generated images and working on getting them in a column style on the left side. Sizing needs to be done.
+Chloe - BUGFIX/ last nights work broke. Added AI generated images and working on getting them in a column style on the left side. Sizing needs to be done. Would like for container to be clickable and route to reviews
 Mike - WIP destinations detail view, shows images. Looked into identity/scaffolding for future BUGFIX
 Najma - WIP hovering over image for book now/rather than a button
+      - Added distance (from earth to destination)
 
 Note to Richelle-- nothing new is pushed since we are all still working on some bugs. Mostly all CSS based stuff so nothing to crazy going on <3
 
