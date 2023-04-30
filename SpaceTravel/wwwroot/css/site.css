@@ -18,6 +18,21 @@ body {
   background-color: rgb(252, 227, 213);
 }
 
+#cardDisplay {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  padding-bottom: 5rem;
+  grid-row-gap: 25px;
+}
+
+#showResponse {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 30%;
+}
+
 .header-container {
   width: 40%;
   height: 40%;
@@ -55,21 +70,6 @@ body {
   color: #000000
 }​
 
-#cardDisplay {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  padding-bottom: 5rem;
-  grid-row-gap: 25px;
-}
-
-#showResponse {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-basis: 30%;
-}
-
 picture > img {
   object-fit: cover;
   width: 100%;
@@ -86,6 +86,7 @@ picture > img {
   font-size: 100px;
   color: rgb(0, 0, 0);
 }
+
 .card-column {
   display: flex;
   justify-content: space-between;
