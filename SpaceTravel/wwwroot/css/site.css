@@ -68,7 +68,7 @@ figure > img {
   box-sizing: border-box;
 }
 
-body {
+.body {
   
   margin: 0;
   background-color: rgb(2, 41, 74);
