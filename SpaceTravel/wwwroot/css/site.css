@@ -16,6 +16,7 @@ html {
 body {
   margin-bottom: 60px;
   background-color: rgb(252, 227, 213);
+  background-image: url(CarinaNebula.png);
 }
 
 #cardDisplay {
@@ -51,7 +52,6 @@ picture > img {
   font-size: 100px;
   color: rgb(0, 0, 0);
 }
-
 .card-column {
   display: flex;
   justify-content: space-between;

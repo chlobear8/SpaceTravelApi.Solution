@@ -39,5 +39,10 @@ namespace SpaceTravel.Controllers
             return View(destination);
         }
 
+        public IActionResult Spinner()
+    {
+        return View();
+    }
+
     }
 }
