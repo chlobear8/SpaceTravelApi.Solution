@@ -16,16 +16,50 @@ html {
 body {
   margin-bottom: 60px;
   background-color: rgb(252, 227, 213);
-  background-image: url(CarinaNebula.png);
 }
+
+.header-container {
+  width: 40%;
+  height: 40%;
+  font-size: 16px;
+  background: #444;
+  margin: 0 auto;
+  border: 2px solid black;
+  background-image: url('/assets/images/CarinaNebula.png');
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+}
+
+.header-container img.wide {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.header-container img.tall {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+.display-4 {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  font-size: 32px;
+}
+
+.display-4 p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000
+}​
 
 #cardDisplay {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
   padding-bottom: 5rem;
   grid-row-gap: 25px;
-
-
 }
 
 #showResponse {
