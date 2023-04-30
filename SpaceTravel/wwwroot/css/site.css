@@ -35,7 +35,7 @@ body {
   flex-basis: 30%;
 }
 
-figure > img {
+picture > img {
   object-fit: cover;
   width: 100%;
   max-height: 33vh;
@@ -52,135 +52,57 @@ figure > img {
   color: rgb(0, 0, 0);
 }
 
-/* spinner css */
-/* .sliceVars {
-  diameter : 350px;
-  numberOfSlices:12;
-  radius : 175px;
-  circumfrance : (6.283185307 * 175px);
-  sliceHeight : ((6.283185307 * 175px)/ 12);
-  sliceOffSet: (((6.283185307 * 175px)/ 12)/2);
-} */
+.feature-container {
+  background-color: aquamarine;
+}
 
+.divide-gray-300 {
+  --tw-divide-y-reverse: 0;
+  border-bottom-width: calc(1px*var(--tw-divide-y-reverse));
+  border-top-width: calc(1px*(1 - var(--tw-divide-y-reverse)));
+}
 
-/* SPINNER CSS NEEDS UPDATED ELEMENTS AND ATTIBUTES*/
-*{
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-grow, .grow {
+  flex-grow: 1;
+}
+
+.flex {
+  display: flex;
+}
+
+*, :after, :before {
+  border: 0 solid #e7e5e4;
   box-sizing: border-box;
 }
 
-.body {
-  
-  margin: 0;
-  background-color: rgb(2, 41, 74);
-  padding: 0;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-
+article {
+  display: block;
 }
 
-.container {
-  width: 500px;
-  height: 500px;
-  background-color: #ccc;
-  border-radius: 50%;
-  border: 15px solid white;
-  position: relative;
-  overflow: hidden;
-  transition: 5s;
-} 
-
-.container div {
-  height: 50%;
-  width: 200px;
-  position: absolute;
-  clip-path: polygon(100% 0, 50% 100%, 0 0);
-  transform: translateX(-50%);
-  transform-origin: bottom;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: white;
-  left: 135px;
-
-} 
-
-.container .one{
-  background-color: yellow;
-  left: 50%;
+.divide-gray-300 {
+  --tw-divide-opacity: 1;
+  border-color: rgb(214 211 209);
 }
 
-.container .two{
-  background-color: orange;
-  transform: rotate(45deg);
+.divide-y {
+  --tw-divide-y-reverse: 0;
+  border-bottom-width: calc(1px*var(--tw-divide-y-reverse));
+  border-top-width: calc(1px*(1 - var(--tw-divide-y-reverse)));
 }
 
-.container .three{
-  background-color: rgb(60, 255, 0);
-  transform: rotate(90deg);
-}
-.container .four{
-  background-color: rgb(0, 255, 251);
-  transform: rotate(135deg);
-}
-
-.container .five{
-  background-color: yellow;
-  transform: rotate(180deg);
-}
-
-.container .six{
-  background-color: orange;
-  transform: rotate(225deg);
-}
-
-.container .seven{
-  background-color: rgb(60, 255, 0);
-  transform: rotate(270deg);
-}
-.container .eight{
-  background-color: rgb(0, 255, 251);
-  transform: rotate(315deg);
-}
-
-.arrow{
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-}
-
-.arrow::before{
-  content: '\2193';
-  font-size: 50px;
-
-}
-
-#spin {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  background-color: rgb(218, 103, 74);
-  text-transform: uppercase;
-  border: 8px solid white;
-  font-weight: bold;
-  font-size: 20px;
-  color: white;
-  width: 80px;
-  height: 80px;
-  font-family: sans-serif;
-  border-radius: 50%;
-  cursor: pointer;
-  outline: none;
-  letter-spacing: 1px;
-
-
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 249 249);
 }

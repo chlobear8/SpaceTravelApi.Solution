@@ -1,6 +1,12 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SpaceTravel.Models;
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Linq;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace SpaceTravel.Controllers;
 
