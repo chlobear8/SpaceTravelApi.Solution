@@ -16,6 +16,7 @@ html {
 body {
   margin-bottom: 60px;
   background-color: rgb(252, 227, 213);
+  background-image: url(CarinaNebula.png);
 }
 
 #cardDisplay {

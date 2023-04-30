@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 namespace SpaceTravel.Models
 {
-  public class SpaceTravelContext : DbContext
+  public class SpaceTravelContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Destination> Destination { get; set; }
   
@@ -12,6 +14,7 @@ namespace SpaceTravel.Models
     
   protected override void OnModelCreating(ModelBuilder builder)
   {
+    base.OnModelCreating(builder);
     builder.Entity<Destination>()
       .HasData(
         new Destination { DestinationId = 1, Name = "Carina Nebula", Url = "https://images-assets.nasa.gov/image/carina_nebula/carina_nebula~medium.jpg" , Price = "$1,295"},
