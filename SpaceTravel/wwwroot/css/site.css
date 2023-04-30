@@ -16,6 +16,7 @@ html {
 body {
   margin-bottom: 60px;
   background-color: rgb(252, 227, 213);
+  background-image: url(CarinaNebula.png);
 }
 
 #cardDisplay {
@@ -35,7 +36,7 @@ body {
   flex-basis: 30%;
 }
 
-figure > img {
+picture > img {
   object-fit: cover;
   width: 100%;
   max-height: 33vh;
@@ -51,3 +52,47 @@ figure > img {
   font-size: 100px;
   color: rgb(0, 0, 0);
 }
+.card-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 320px;
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.card > img:first-child {
+  border-radius: 7px 7px 0 0;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: rebeccapurple;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+}
+
+.card h3 em {
+  padding: 0.25em;
+  background-color: #eddbff;
+  border-radius: 4px;
+}
+
+.card p {
+  color: #757575;
+  line-height: 1.5;
+}
+
+.button {
+  text-decoration: none;
+  background-color: rebeccapurple;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
