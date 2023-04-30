@@ -35,7 +35,7 @@ body {
   flex-basis: 30%;
 }
 
-figure > img {
+picture > img {
   object-fit: cover;
   width: 100%;
   max-height: 33vh;
@@ -50,6 +50,10 @@ figure > img {
   font-weight: bolder;
   font-size: 100px;
   color: rgb(0, 0, 0);
+}
+
+.feature-container {
+  background-color: aquamarine;
 }
 
 .divide-gray-300 {
@@ -77,24 +81,6 @@ figure > img {
 .flex {
   display: flex;
 }
-
-/* *, :after, :before {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal: ;
-
-} */
 
 *, :after, :before {
   border: 0 solid #e7e5e4;
