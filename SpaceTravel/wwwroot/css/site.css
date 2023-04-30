@@ -23,6 +23,7 @@ body {
   grid-template-columns: repeat(3,minmax(0,1fr));
   padding-bottom: 5rem;
   grid-row-gap: 25px;
+  margin: auto;
 
 
 }
@@ -50,4 +51,39 @@ figure > img {
   font-weight: bolder;
   font-size: 100px;
   color: rgb(0, 0, 0);
+}
+
+.card-img-top {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.card-body {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card:hover .card-img-top {
+  opacity: 0.3;
+}
+
+.card:hover .card-body {
+  opacity: 1;
+}
+
+.card-text {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
