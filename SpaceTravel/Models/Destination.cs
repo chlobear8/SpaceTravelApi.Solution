@@ -9,5 +9,7 @@ namespace SpaceTravel.Models
     public string Price { get; set; }
 
     public string Url { get; set; }
+
+    public Profile Profile { get; set; }
   }
 }

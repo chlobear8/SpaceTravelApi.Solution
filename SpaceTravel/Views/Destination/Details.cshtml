@@ -18,6 +18,8 @@
 
 <div class="container">
     <h4>Destination</h4>
+    @using( Html.BeginForm())
+    {
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -33,15 +35,22 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Url)
+            
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Url)
+            <img src="@Model.Url" class="mw-75" alt="@Model.Name" />
         </dd>
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+        <input type="submit" class="btn btn-primary" value= "BOOK FLIGHT"></input>
+            </div>
+        </div>
+    
     </dl>
+    }
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.DestinationId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
 </body>
