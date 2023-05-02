@@ -7,18 +7,32 @@ namespace SpaceTravel.Models
 {
   public class NASA
   {
-    public string Url { get; set; }
-    public int Count { get; set; }
+    public string Title { get; set; }
 
-    public static List<NASA> GetPictures(string apiKey)
+    public int Date { get; set; }
+
+    public string Url {get; set;}
+
+    public static byte[] GetPictures(string apiKey)
     {
-      Task<string> apiCallTask = ApiHelper.ApiCall(apiKey);
-      string result = apiCallTask.Result;
-
+      var apiCallTask = ApiHelper.ApiCall(apiKey);
+      var result = apiCallTask.Result;
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      List<NASA> nasaList = JsonConvert.DeserializeObject<List<NASA>>(jsonResponse["results"].ToString());
+      var nasaList = JsonConvert.DeserializeObject<NASA>(jsonResponse["results"].ToString());
+      return null;
+    }
 
-      return nasaList;
+    public static string GP(string apiKey) 
+    {
+      var apiCallTask = ApiHelper.ApiCall(apiKey);
+      var result = apiCallTask.Result;
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      if (!jsonResponse.ContainsKey("url"))
+      {
+        return "";
+      }
+      System.Console.WriteLine(jsonResponse);
+      return jsonResponse["url"].ToString();
     }
   }
 }

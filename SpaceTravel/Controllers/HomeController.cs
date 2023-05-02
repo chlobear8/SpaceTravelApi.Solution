@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace SpaceTravel.Controllers;
 
@@ -14,14 +16,23 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _db;
 
-    public HomeController(ILogger<HomeController> db)
+    private readonly string _apikey;
+
+    public HomeController(ILogger<HomeController> db, IConfiguration configuration)
     {
         _db = db;
+        _apikey = configuration["NASA"];
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
-        return View();
+        var allPictures = NASA.GP(_apikey);
+        var nasar = new NASA();
+        nasar.Url = allPictures;
+        var x = new List<NASA>();
+        x.Add(nasar);
+        return View(x);
     }
 
     public IActionResult Privacy()
