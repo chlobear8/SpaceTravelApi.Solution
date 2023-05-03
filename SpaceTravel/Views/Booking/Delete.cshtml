@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Booking";
+}
+
+@model SpaceTravel.Models.BookingDestination;
+@using SpaceTravel.Models;
+
+<div class="d-flex justify-content-center" id="hot-flights"> 
+    <h1 id="font">Delete Booking</h1>
+</div>
+
+<p>Are you sure you want to delete this booking for @Model.Destination.Name?</p>
+@using (Html.BeginForm("Delete", "Booking", new { id = @Model.BookingId }))
+{
+    <input type="submit" value="Delete" class="btn btn-danger" />
+}
+
+@Html.ActionLink("Cancel", "Index")

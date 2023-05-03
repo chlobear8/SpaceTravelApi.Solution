@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 namespace SpaceTravel.Models
+
 {
   public class Destination
   {
@@ -9,7 +11,8 @@ namespace SpaceTravel.Models
     public string Price { get; set; }
 
     public string Url { get; set; }
+    public List<BookingDestination> JoinEntities { get; }
 
-    public Profile Profile { get; set; }
+    // public Profile Profile { get; set; }
   }
 }

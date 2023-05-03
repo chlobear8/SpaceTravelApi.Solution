@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SpaceTravel.Models;
 
@@ -10,9 +11,10 @@ using SpaceTravel.Models;
 namespace SpaceTravel.Migrations
 {
     [DbContext(typeof(SpaceTravelContext))]
-    partial class SpaceTravelContextModelSnapshot : ModelSnapshot
+    [Migration("20230503020748_ProfileFix")]
+    partial class ProfileFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,46 +213,6 @@ namespace SpaceTravel.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("SpaceTravel.Models.Booking", b =>
-                {
-                    b.Property<int>("BookingId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("BookingDate")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("BookingId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Bookings");
-                });
-
-            modelBuilder.Entity("SpaceTravel.Models.BookingDestination", b =>
-                {
-                    b.Property<int>("BookingDestinationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("BookingId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DestinationId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookingDestinationId");
-
-                    b.HasIndex("BookingId");
-
-                    b.HasIndex("DestinationId");
-
-                    b.ToTable("BookingDestinations");
-                });
-
             modelBuilder.Entity("SpaceTravel.Models.Destination", b =>
                 {
                     b.Property<int>("DestinationId")
@@ -263,12 +225,17 @@ namespace SpaceTravel.Migrations
                     b.Property<string>("Price")
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("ProfileId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Url")
                         .HasColumnType("longtext");
 
                     b.HasKey("DestinationId");
 
-                    b.ToTable("Destinations");
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("Destination");
 
                     b.HasData(
                         new
@@ -313,6 +280,25 @@ namespace SpaceTravel.Migrations
                             Price = "$1,495",
                             Url = "https://images-assets.nasa.gov/image/PIA21474/PIA21474~small.jpg"
                         });
+                });
+
+            modelBuilder.Entity("SpaceTravel.Models.Profile", b =>
+                {
+                    b.Property<int>("ProfileId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ProfileId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Profile");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -366,7 +352,16 @@ namespace SpaceTravel.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SpaceTravel.Models.Booking", b =>
+            modelBuilder.Entity("SpaceTravel.Models.Destination", b =>
+                {
+                    b.HasOne("SpaceTravel.Models.Profile", "Profile")
+                        .WithMany("Destinations")
+                        .HasForeignKey("ProfileId");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("SpaceTravel.Models.Profile", b =>
                 {
                     b.HasOne("SpaceTravel.Models.ApplicationUser", "User")
                         .WithMany()
@@ -375,33 +370,9 @@ namespace SpaceTravel.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SpaceTravel.Models.BookingDestination", b =>
+            modelBuilder.Entity("SpaceTravel.Models.Profile", b =>
                 {
-                    b.HasOne("SpaceTravel.Models.Booking", "Booking")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SpaceTravel.Models.Destination", "Destination")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("DestinationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Booking");
-
-                    b.Navigation("Destination");
-                });
-
-            modelBuilder.Entity("SpaceTravel.Models.Booking", b =>
-                {
-                    b.Navigation("JoinEntities");
-                });
-
-            modelBuilder.Entity("SpaceTravel.Models.Destination", b =>
-                {
-                    b.Navigation("JoinEntities");
+                    b.Navigation("Destinations");
                 });
 #pragma warning restore 612, 618
         }
