@@ -10,7 +10,7 @@ namespace SpaceTravel.Controllers
     {
         private readonly SpaceTravelContext _db;
 
-        public DestinationController(SpaceTravelContext db)
+        public ProfileController(SpaceTravelContext db)
         {
             _db = db;
         }
@@ -20,3 +20,5 @@ namespace SpaceTravel.Controllers
             List<Destination> model = _db.Destination.ToList();
             return View(model);
         }
+    }
+}
