@@ -81,12 +81,18 @@ body {
 }
 
 .api-container {
-  position: absolute;
   display: block;
-  margin-left: auto;
-  height: 40rem;
-  width: 40rem;
-  float: right;
+  margin-left: 330px;
+  margin-right: auto;
+  height: 50px;
+  width: 10px;
+  object-fit: contain;
+  padding-top: 35px;
+}
+
+.api-container img {
+  height: 550px;
+  width: 600px;
 }
 
 .header-container {
