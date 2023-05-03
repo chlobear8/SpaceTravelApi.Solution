@@ -43,6 +43,12 @@ picture > img {
   max-height: 33vh;
 }
 
+figure > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 33vh;
+} 
+
 #hot-flights {
   padding-bottom: 5rem;
   padding-top: 3rem;
