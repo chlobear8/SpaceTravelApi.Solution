@@ -3,6 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .navbar-nav {
   position: relative;
+  margin-left: auto;
   float: right;
 }
 
