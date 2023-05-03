@@ -18,6 +18,52 @@ body {
   background-color: rgb(252, 227, 213);
 }
 
+.card-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+#splash{
+  width: 320px;
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#splash > img:first-child {
+  border-radius: 7px 7px 0 0;
+  margin-bottom: 20px;
+}
+
+#splash h3 {
+  color: rebeccapurple;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+}
+
+#splash h3 em {
+  padding: 0.25em;
+  background-color: #eddbff;
+  border-radius: 4px;
+}
+
+#splash p {
+  color: #757575;
+  line-height: 1.5;
+}
+
+.button {
+  text-decoration: none;
+  background-color: rebeccapurple;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+
+
 #cardDisplay {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
@@ -94,49 +140,5 @@ picture > img {
   font-weight: bolder;
   font-size: 100px;
   color: rgb(0, 0, 0);
-}
-
-.card-column {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card {
-  width: 320px;
-  padding: 20px;
-  border: 1px solid #c9c9c9;
-  border-radius: 7px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-.card > img:first-child {
-  border-radius: 7px 7px 0 0;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  color: rebeccapurple;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-}
-
-.card h3 em {
-  padding: 0.25em;
-  background-color: #eddbff;
-  border-radius: 4px;
-}
-
-.card p {
-  color: #757575;
-  line-height: 1.5;
-}
-
-.button {
-  text-decoration: none;
-  background-color: rebeccapurple;
-  color: #fff;
-  padding: 0.5em 1em;
-  border-radius: 4px;
 }
 
