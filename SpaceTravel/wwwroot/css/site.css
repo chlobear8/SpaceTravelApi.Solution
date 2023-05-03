@@ -33,6 +33,15 @@ body {
   flex-basis: 30%;
 }
 
+.api-container {
+  position: absolute;
+  display: block;
+  margin-left: auto;
+  height: 40rem;
+  width: 40rem;
+  float: right;
+}
+
 .header-container {
   width: 700px;
   height: 264px;
