@@ -13,13 +13,7 @@
     </div>
 </div>
 
-<div class="api-container">
-    <ul> @foreach (NASA nasa in Model)
-        {
-        <img src="@nasa.Url"></img>
-        }
-    </ul>
-</div>
+
 
   <meta charset="utf-8" />
     <main class="card-container">
@@ -63,6 +57,21 @@
                 </footer>
             </div>
         </main>
+
+<div class="api-container">
+    <ul> @foreach (NASA nasa in Model)
+        {
+        <img src="@nasa.Url"></img>
+        }
+    </ul>
+</div>
+
+<!-- <div class="space-vegas">
+    <img src="~/assets/images/SpaceVegas.png" alt="Neptune">
+    <h1 class="display-4">
+    <p>Try your luck at Space Vegas now located near Mars!</p>
+    </h1>
+</div> -->
 
 
 
