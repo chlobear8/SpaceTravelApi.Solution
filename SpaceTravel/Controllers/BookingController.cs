@@ -37,6 +37,35 @@ namespace SpaceTravel.Controllers
       // Pass the booking object as the model to the view
       return View(booking);
     }
+    public IActionResult BookFlight(int destinationId)
+    {
+    Destination destination = _db.Destinations.FirstOrDefault(d => d.DestinationId == destinationId);
+    if (destination == null)
+    {
+        return NotFound();
+    }
+
+    Booking booking = new Booking();
+    booking.JoinEntities = new List<BookingDestination>();
+    booking.JoinEntities.Add(new BookingDestination { Destination = destination });
+
+    return View("Create", booking);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Booking booking)
+    {
+        if (ModelState.IsValid)
+        {
+            _db.Bookings.Add(booking);
+            await _db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        // If the model state is not valid, redisplay the form with validation errors
+        return View(booking);
+    }
+
 
   }
 }

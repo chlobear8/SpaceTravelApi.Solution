@@ -1,33 +1,29 @@
 @{
-    ViewData["Title"] = "Booking";
+    ViewData["Title"] = "Destination";
 }
 
-@model SpaceTravel.Models.Booking;
 @using SpaceTravel.Models;
 
 <div class="d-flex justify-content-center" id="hot-flights"> 
-    <h1 id="font">Your Bookings</h1>
+    <h1 id="font">Hot flights</h1>
 </div>
 
-@* <!-- @if(@Model.JoinEntities.Count == 0)
-{
-  <h3>Grab your Multipass, let's go!</h3>
-  <h3>You don't have any travel plans with us yet.</h3>
-}
-else
-{ --> *@
-
-  <h3>Your planned trips:</h3>
-  <ul>
-    @foreach (BookingDestination join in Model.JoinEntities)
+<div class="container" id="cardDisplay">
+    @foreach (Destination destination in Model)
     {
-      <li>@join.Destination.Name</li>
+    <div class="card" style="width: 18rem;"> 
+        <figure>
+            <img src=@($"{destination.Url}") class="card-img-top" alt="...">
+        </figure>
+        <div class="card-body">
+            <h5 class="card-title">@Html.ActionLink($"{destination.Name}", "Details", new { id = destination.DestinationId}) </h5>
+            <p class="card-text">@($"{destination.Price}")</p>
+            <form method="post" action="@Url.Action("BookFlight", "Booking", new { destinationId = destination.DestinationId })">
+                <button type="submit" class="btn btn-primary">Book Flight</button>
+            </form>
 
-      @using (Html.BeginForm("DeleteJoin", "Booking"))
-      {
-      @Html.Hidden("joinId", @join.DestinationId)
-      <input type="submit" value="Delete"/>
-      }
+        </div>
+    </div>
+
     }
-  </ul>
-<!-- } -->
+</div>
