@@ -7,7 +7,9 @@ namespace SpaceTravel.Models
   public class SpaceTravelContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Destination> Destinations { get; set; }
+
     public DbSet<Booking> Bookings { get; set; }
+    
     public DbSet<BookingDestination> BookingDestinations {get; set; }
   
     public SpaceTravelContext(DbContextOptions<SpaceTravelContext> options) : base(options)

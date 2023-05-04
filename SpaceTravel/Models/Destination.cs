@@ -11,8 +11,7 @@ namespace SpaceTravel.Models
     public string Price { get; set; }
 
     public string Url { get; set; }
+    
     public List<BookingDestination> JoinEntities { get; }
-
-    // public Profile Profile { get; set; }
   }
 }

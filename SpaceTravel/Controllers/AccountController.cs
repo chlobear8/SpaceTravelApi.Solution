@@ -60,11 +60,6 @@ namespace SpaceTravel.Controllers
       return View();
     }
 
-    // public ActionResult LogOff()
-    // {
-    //   return View();
-    // }
-
     [HttpPost]
     public async Task<ActionResult> Login(LoginViewModel model)
     {

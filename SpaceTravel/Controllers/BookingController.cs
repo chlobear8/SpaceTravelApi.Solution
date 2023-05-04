@@ -20,15 +20,6 @@ namespace SpaceTravel.Controllers
       _db = db;
     }
 
-    // public ActionResult Index()
-    // {
-    //   string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
-    //   List<Booking> userBookings = _db.Bookings
-    //                           .Where(entry => entry.User.Id == currentUser.Id)
-    //                           .ToList();
-    //   return View(userBookings);
-    // }
     public IActionResult Index()
     {
       // Get the booking information from your database
@@ -86,7 +77,5 @@ namespace SpaceTravel.Controllers
       }
       return RedirectToAction("Details", new { id = booking.BookingId });
     }
-
-
   }
 }
