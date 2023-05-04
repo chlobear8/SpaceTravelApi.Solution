@@ -8,7 +8,7 @@ namespace SpaceTravel.Models
     public int BookingId { get; set; }
     public string BookingDate { get; set; }
     public ApplicationUser User { get; set; }
-    public List<BookingDestination> JoinEntities { get; }
+    public List<BookingDestination> JoinEntities { get; set;}
 
   }
 }
