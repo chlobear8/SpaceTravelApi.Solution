@@ -13,10 +13,16 @@
     </div>
 </div>
 
-
+    <div class="api-container">
+        <ul> @foreach (NASA nasa in Model)
+            {
+            <img src="@nasa.Url"></img>
+            }
+        </ul>
+    </div>
 
   <meta charset="utf-8" />
-    <main class="card-container">
+    <div class="card-container">
         <h2>Hot Spots</h2>
             <div class="card-container">
                 <section class="card-column">
@@ -51,20 +57,11 @@
                         <a href="#" class="button" style="display: inline-block">Add to Cart</a>
                     </article>
                 </section>
-                <footer>
-                    <div class="card-container">
-                    <p>&copy; 2023 Leeloo's Multipass Agency</p>
-                </footer>
             </div>
-        </main>
+        </div>
+    </div>
+    
 
-<div class="api-container">
-    <ul> @foreach (NASA nasa in Model)
-        {
-        <img src="@nasa.Url"></img>
-        }
-    </ul>
-</div>
 
 <!-- <div class="space-vegas">
     <img src="~/assets/images/SpaceVegas.png" alt="Neptune">

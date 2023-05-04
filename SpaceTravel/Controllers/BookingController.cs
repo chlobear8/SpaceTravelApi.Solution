@@ -66,6 +66,27 @@ namespace SpaceTravel.Controllers
         return View(booking);
     }
 
+        public ActionResult AddDestination(int id)
+    {
+      Booking thisBooking = _db.Bookings.FirstOrDefault(booking => booking.BookingId == id);
+      ViewBag.BookingId = new SelectList(_db.Bookings, "BookingId", "Description");
+      return View(thisBooking);
+    }
+
+    [HttpPost]
+    public ActionResult AddDestination(Booking booking, int destinationId)
+    {
+#nullable enable
+      BookingDestination? joinEntity = _db.BookingDestinations.FirstOrDefault(join => (join.DestinationId == destinationId && join.BookingId == booking.BookingId));
+#nullable disable
+      if (joinEntity == null && booking.BookingId != 0)
+      {
+        _db.BookingDestinations.Add(new BookingDestination() { BookingId = booking.BookingId, DestinationId = destinationId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = booking.BookingId });
+    }
+
 
   }
 }

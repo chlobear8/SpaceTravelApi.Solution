@@ -3,27 +3,29 @@
 }
 
 @using SpaceTravel.Models;
+@model SpaceTravel.Models.Booking;
 
 <div class="d-flex justify-content-center" id="hot-flights"> 
-    <h1 id="font">Hot flights</h1>
+    <h1 id="font">Booked flights</h1>
 </div>
 
-<div class="container" id="cardDisplay">
-    @foreach (Destination destination in Model)
+@if(@Model.JoinEntities.Count == 0)
     {
-    <div class="card" style="width: 18rem;"> 
-        <figure>
-            <img src=@($"{destination.Url}") class="card-img-top" alt="...">
-        </figure>
-        <div class="card-body">
-            <h5 class="card-title">@Html.ActionLink($"{destination.Name}", "Details", new { id = destination.DestinationId}) </h5>
-            <p class="card-text">@($"{destination.Price}")</p>
-            <form method="post" action="@Url.Action("BookFlight", "Booking", new { destinationId = destination.DestinationId })">
-                <button type="submit" class="btn btn-primary">Book Flight</button>
-            </form>
-
-        </div>
-    </div>
-
+    <p>You don't have any trips planned with us yet!</p>
     }
-</div>
+    else
+    {
+    <h4>Trips:</h4>
+    <ul>
+    @foreach(BookingDestination join in Model.JoinEntities)
+    {
+        <li>@join.Destination.Name</li>
+        @using (Html.BeginForm("DeleteJoin", "Booking"))
+        {
+        @Html.Hidden("joinId", @join.BookingDestinationId)
+        <input type="submit" value="Delete"/>
+        }
+    }
+    </ul>
+    
+}

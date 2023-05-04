@@ -1,0 +1,20 @@
+
+@{
+  Layout = "_Layout";
+}
+
+@using SpaceTravel.Models
+@model SpaceTravel.Models.Destination
+<h2>Book a flight!</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.DestinationId)
+
+    @Html.Label("Select Destination")
+    @Html.DropDownList("DestinationId")
+
+    <input type="submit" value="Save" />
+}

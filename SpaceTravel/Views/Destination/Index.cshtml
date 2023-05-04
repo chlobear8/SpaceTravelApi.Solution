@@ -18,8 +18,7 @@
         <div class="card-body">
             <h5 class="card-title">@Html.ActionLink($"{destination.Name}", "Details", new { id = destination.DestinationId}) </h5>
             <p class="card-text">@($"{destination.Price}")</p>
-            @Html.ActionLink("Book Flight", "Create", "Booking", new { destinationId = destination.DestinationId }, new { @class = "btn btn-primary" })
-
+            @Html.ActionLink("Book Flight", "BookFlight", "Booking", new { destinationId = destination.DestinationId }, new { @class = "btn btn-primary" })
         </div>
     </div>
 
